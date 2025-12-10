@@ -1,136 +1,204 @@
-# Activity-Tracker-Chrome-Extension
-Chrome Extension + MERN Activity Tracker (Screen Time Dashboard)
+# 🌟 Activity Tracker – Chrome Extension
 
-How to Install & Use This Project
+A powerful Chrome Extension that tracks how long users spend on websites and displays beautiful analytics — built with React, Node.js, MongoDB, and JWT authentication.
 
-Follow these steps to run the backend, frontend, and Chrome extension.
+---
 
-⭐ 1. Clone the Project
-git clone https://github.com/vaishnavi12345678999/Activity-Tracker-Chrome-Extension.git
-cd Activity-Tracker-Chrome-Extension
+## 🔰 Badges
 
-⭐ 2. Setup Backend (Node.js + Express + MongoDB)
-📂 Go to backend folder
-cd backend
+![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=black)
+![NodeJS](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-4EA94B?logo=mongodb&logoColor=white)
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=google-chrome&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-📦 Install backend dependencies
-npm install
+---
 
-🔐 Create your .env file inside /backend
-PORT=5000
-MONGO_URI=your_mongo_connection_string
-JWT_SECRET=your_secret_key
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
+# 📚 Table of Contents
+- Features
+- Screenshots
+- Installation
+- Usage
+- API Endpoints
+- Project Structure
+- Environment Variables
+- Roadmap
+- FAQ
+- Author
+- License
 
-▶️ Start backend server
-npm run dev
+---
+
+# 🚀 Features
+- ⏱️ Track time spent on each website  
+- 🔐 Secure login with JWT  
+- 🔑 Google OAuth authentication  
+- 📊 Analytics dashboard with charts  
+- 🔄 Real-time syncing with backend  
+- 🔔 Tracks active tab + time spent  
+
+---
+
+# 🖼️ Screenshots  
 
 
-Backend runs at:
-👉 http://localhost:5000
+### Extension Popup  
+![Popup Screenshot](images/popup.png)
 
-⭐ 3. Setup Frontend (React)
-📂 Go to frontend folder
-cd ../activity-tracker-frontend
+### Dashboard  
+![Dashboard Screenshot](images/dashboard.png)
 
-📦 Install frontend dependencies
-npm install
+---
 
-▶️ Start frontend
-npm start
+# 🛠 Installation
 
+## 1️⃣ Clone the Repository  
+git clone https://github.com/vaishnavi12345678999/Activity-Tracker-Chrome-Extension.git  
+cd Activity-Tracker-Chrome-Extension  
 
-Frontend runs at:
-👉 http://localhost:3000
+---
 
-⭐ 4. Install Chrome Extension
+## 2️⃣ Backend Setup
 
-Open Chrome
+Go to backend folder:  
+cd backend  
 
-Go to chrome://extensions/
+Install dependencies:  
+npm install  
 
-Enable Developer Mode
+Create `.env` file:  
+PORT=5000  
+MONGO_URI=your_mongo_connection_string  
+JWT_SECRET=your_secret_key  
+GOOGLE_CLIENT_ID=your_google_client_id  
+GOOGLE_CLIENT_SECRET=your_google_client_secret  
 
-Click Load Unpacked
+Start server:  
+npm run dev  
+Backend runs at: http://localhost:5000  
 
-Select the extension/ folder from this project
+---
 
-Your extension will appear in the Chrome toolbar.
+## 3️⃣ Frontend Setup
 
-🎯 How to Use
-🔑 1. Login / Signup
+Go to frontend:  
+cd ../activity-tracker-frontend  
 
-Open the extension → login using:
+Install dependencies:  
+npm install  
 
-Email + password
+Start frontend:  
+npm start  
+Runs at: http://localhost:3000  
 
-Google OAuth
+---
 
-⏱️ 2. Automatic Time Tracking
+## 4️⃣ Install Chrome Extension
 
-Once logged in:
+1. Open Chrome  
+2. Visit chrome://extensions/  
+3. Enable Developer Mode  
+4. Click **Load Unpacked**  
+5. Select the `extension` folder  
+6. Extension appears in toolbar  
 
-The extension tracks time spent on websites
+---
 
-Sends usage data to backend
+# 🎯 Usage
 
-Syncs with React dashboard
+### Login / Signup  
+- Email + password  
+- Google OAuth  
 
-📊 3. View Your Analytics Dashboard
+### Time Tracking  
+- Tracks active tab  
+- Logs browsing time  
+- Sends usage logs to backend  
 
-The dashboard shows:
+### Dashboard  
+- See websites visited  
+- Total time spent  
+- Daily/weekly/monthly analytics  
 
-Total browsing time
+---
 
-Time spent on each site
+# 🔌 API Endpoints
 
-Daily/weekly/monthly usage patterns
+### Auth  
+POST /auth/signup  
+POST /auth/login  
 
-🛠️ Tech Stack
+### Tracking  
+POST /track/add  
+GET /track/get  
 
-Extension: Chrome Manifest V3, JavaScript,Popup UI
+---
 
-Backend:Node.js, Express, MongoDB (Mongoose), JWT Authentication
+# 📁 Project Structure
 
-Frontend:React, Axios, CSS
+activity-tracker/  
+│  
+├── backend/  
+│   ├── server.js  
+│   ├── routes/  
+│   ├── controllers/  
+│   ├── models/  
+│   ├── middleware/  
+│   └── utils/  
+│  
+├── activity-tracker-frontend/  
+│   ├── src/  
+│   └── public/  
+│  
+├── extension/  
+│   ├── popup/  
+│   ├── scripts/  
+│   ├── background.js  
+│   └── manifest.json  
+│  
+└── images/  
 
-📁 Project Structure
-activity-tracker/
-│
-├── backend/
-│   ├── server.js
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   ├── middleware/
-│   └── utils/
-│
-├── activity-tracker-frontend/
-│   ├── src/
-│   └── public/
-│
-├── extension/
-│   ├── popup/
-│   ├── scripts/
-│   ├── background.js
-│   └── manifest.json
-│
-└── .gitignore
+---
 
-📌 Environment Variables Example (.env.example)
+# 🔐 Environment Variables
+
+```
 PORT=5000
 MONGO_URI=
 JWT_SECRET=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+```
 
-🤝 Author
+---
 
-Vaishnavi Vaitla
-Full Stack Developer
-GitHub: https://github.com/vaishnavi12345678999
+# 🗺 Roadmap
+- Dark mode  
+- Better charts in dashboard  
+- Weekly insights  
+- Chrome storage syncing  
+- Optional block-site feature (future)  
 
-⭐ Support
+---
 
-If you like this project, please star the repo!
+# ❓ FAQ
+
+### Why is time not tracking?  
+Make sure the extension is pinned and running.
+
+### Dashboard not loading?  
+Check backend URL and CORS config.
+
+---
+
+# 👩‍💻 Author  
+**Vaishnavi Vaitla**  
+Full Stack Developer  
+GitHub: https://github.com/vaishnavi12345678999  
+LinkedIn: https://www.linkedin.com/in/vaishnavi-vaitla-360a1a225  
+
+---
+
+# 📜 License  
+Licensed under the MIT License.
+
