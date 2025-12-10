@@ -45,6 +45,10 @@ A powerful Chrome Extension that tracks how long users spend on websites and dis
 ### Extension Popup  
 ![Popup Screenshot](images/popup.png)
 
+### 🔹 Login Page  
+![Login Screenshot](images/signup.png)
+
+---
 ### Dashboard  
 ![Dashboard Screenshot](images/dashboard.png)
 
