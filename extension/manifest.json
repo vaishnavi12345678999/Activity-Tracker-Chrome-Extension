@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Activity Tracker",
+  "version": "1.0",
+  "description": "Track time spent on websites and restrict distractions.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "identity",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://www.googleapis.com/*",
+    "http://localhost:5000/*"
+  ],
+  "oauth2": {
+    "client_id": "131525709194-b1u4c85jj12esb707uam6humu1r7odsr.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+  {
+    "resources": ["dashboard.html", "dashboard.js", "signup.html"],
+    "matches": ["<all_urls>"]
+  }
+],
+
+ 
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
+

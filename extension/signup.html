@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Activity Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .back {
+      margin-top: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    .back a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .back a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required minlength="6" />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <div class="error" id="errorMsg"></div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="back">
+      <a href="popup.html">← Back to Login</a>
+    </div>
+  </div>
+
+  <!-- Link to the external JS file -->
+  <script src="signup.js"></script>
+</body>
+</html>

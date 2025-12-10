@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Activity Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      width: 350px; height: 520px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .container {
+      background: #fff; width: 90%; padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 0.4s ease-in-out;
+      overflow-y: auto; max-height: 95%;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    h1, h2, h3 { text-align: center; color: #333; margin-bottom: 20px; }
+    input, button {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border-radius: 8px; font-size: 14px;
+    }
+    input { border: 1px solid #ddd; }
+    button {
+      border: none; font-weight: bold;
+      cursor: pointer; transition: background 0.2s ease;
+    }
+    #loginBtn { background-color: #4285F4; color: white; }
+    #manualLoginBtn, #signupSubmit { background-color: #34A853; color: white; }
+    #logoutBtn { background-color: #ea4335; color: white; }
+
+    /* new dashboard button styling */
+    #openDashboardBtn {
+      background: #4A90E2;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s ease;
+    }
+    #openDashboardBtn:hover {
+      background: #3977c7;
+    }
+
+    .link {
+      text-align: center; font-size: 13px; margin-top: 15px;
+    }
+    .link a {
+      color: #3366cc; cursor: pointer;
+      text-decoration: none; font-weight: bold;
+    }
+    .link a:hover { text-decoration: underline; }
+    .error {
+      color: red; font-size: 0.9em;
+      margin-bottom: 10px; text-align: center;
+    }
+    .hidden { display: none; }
+
+    #activityList {
+      max-height: 200px; overflow-y: auto;
+      list-style: none; padding: 0;
+    }
+    #activityList li {
+      background: #f1f1f1;
+      margin: 5px 0; padding: 8px;
+      border-radius: 8px; font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Login -->
+    <div id="loginDiv">
+      <h1>Activity Tracker</h1>
+      <button id="loginBtn">Login with Google</button>
+      <p style="text-align:center;">or</p>
+      <input type="email" id="emailInput" placeholder="Email" required />
+      <input type="password" id="passwordInput" placeholder="Password" required />
+      <button id="manualLoginBtn">Login</button>
+
+      <div class="link">
+        Don't have an account? <a id="showSignup">Sign up</a>
+      </div>
+      <div class="error" id="loginError"></div>
+    </div>
+
+    <!-- Signup -->
+    <div id="signupDiv" class="hidden">
+      <h2>Create Account</h2>
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <button id="signupSubmit">Sign Up</button>
+
+      <div class="link">
+        ← <a id="backToLogin">Back to Login</a>
+      </div>
+      <div class="error" id="signupError"></div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardDiv" class="hidden">
+      <h3>Welcome, <span id="userName">User</span> 👋</h3>
+      <p><strong>Total Time Today:</strong> <span id="totalTime">0s</span></p>
+
+      <h3>All Activity Logs</h3>
+      <ul id="activityList"></ul>
+
+      <!-- ⭐ New button added here ⭐ -->
+      <button id="openDashboardBtn">Open Full Dashboard</button>
+
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+  </div>
+<div id="domainSummary"></div>
+<div id="pagesForDomain"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
